@@ -1,0 +1,12 @@
+On exécute le fichier setuid-wrapper
+##### app-script-ch7@challenge02:~$ :   ./setuid-wrapper
+
+L’utilisation du caractère | permet l’injection de commande système.
+Un simple echo permet de faire le café
+
+*************************
+* Stat File Service    *
+*************************
+>>> cat .passwd >&2 |
+
+Et voici le flag XXXXX ( et oui essayer au moins le code pour comprendre le principe svp ! )
